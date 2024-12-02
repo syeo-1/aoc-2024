@@ -3,37 +3,6 @@ from aoc_helper import (
     read_file_lines,
 )
 
-def problem_dampener_report_is_safe(report):
-    '''
-    figure out which level to remove in a report in order to make it safe
-    using functionality outline for problem dampener
-    eg. if the report contains the given levels:
-    1 3 2 4 5
-
-    3 causes the report to be unsafe because 3->2 is decreasing when the sequence should be increasing
-
-    by removing 3, the report becomes
-    1 2 4 5
-
-    which follow the constraints outlined in part 1
-    '''
-
-    '''
-    good enough to just brute force it
-
-   do so by just omitting one element at a time by using slicing operations
-    '''
-    for i in range(len(report)):
-        modified_report = report[:i] + report[i:]
-
-        # then check if the modified report is safe!
-
-    # go through the report
-
-    for i in range(1, len(report)):
-        diff = report[i] - report[i-1]
-
-    
 
 def report_is_safe(report, status='same'):
     '''
