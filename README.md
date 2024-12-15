@@ -90,5 +90,8 @@ a deque is a double-ended queue. Use it for queueing operations
     a_deque.append(1)
     a_deque.popleft() # to dequeue an element!
 
+### problem 11
+
+use @cache from functools to greatly improve performance of recursive functions
 
 
