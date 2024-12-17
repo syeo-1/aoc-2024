@@ -108,4 +108,22 @@ Ones such library that offers integer solutions to solving linear equations is s
 
 unfortunately, wasn't able to get it to work...
 
+### problem 14
+
+learned more about using namedtuple to create quick class-like objects. This can be good for creating coordinate or point based objects.
+
+At the same time, also learned a bit about calculating the product of an iterable (list)
+
+you can use math.prod if you have python 3.8+
+    from math import prod
+    print(prod(list_of_numbers))
+
+or if you do not, you can also get the same result using functools and operator like so
+    from functools import reduce
+    from operator import mul
+    print(reduce(mul, list_of_numbers, 1))
+
+where 1 is the starting value and mul is the operation to do on your iterable
+
+
 
