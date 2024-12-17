@@ -112,6 +112,14 @@ unfortunately, wasn't able to get it to work...
 
 learned more about using namedtuple to create quick class-like objects. This can be good for creating coordinate or point based objects.
 
+    from collections import namedtuple
+    point = namedtuple('Point', ['x', 'y'])
+    velocity = namedtuple('Velocity', ['x', 'y'])
+
+    # note that you use the variable name of the namedtuple to initialize an instance
+    new_point_example = point(x=3, y=4)
+    new_velocity_example = velocity(x=4, y=5)
+
 At the same time, also learned a bit about calculating the product of an iterable (list)
 
 you can use math.prod if you have python 3.8+
