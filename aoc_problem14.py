@@ -33,10 +33,16 @@ def main():
     # print('===========')
 
     # processed_robot_data = [[point(x=2, y=4), velocity(x=2, y=-3)]]
-    for _ in range(100):
+    min_q_count = 100_000_000_000
+    for trial in range(9096):
         for i, robot_data in enumerate(processed_robot_data):
             cur_point = robot_data[0]
             cur_velocity = robot_data[1]
+
+            # for part 2
+            # print(cur_point.x)
+            # print(cur_point.y)
+            layout[cur_point.y][cur_point.x] = '.'
 
             # calculate new x and y values
             new_x = cur_point.x + cur_velocity.x
@@ -55,12 +61,29 @@ def main():
             new_point = point(x = new_x, y = new_y)
 
             processed_robot_data[i] = [new_point, cur_velocity]
+
+            # for part 2
+            layout[new_point.y][new_point.x] = 'X'
+
         
+        # for part 2
+        # 7000 too low
+        # 9096 too high
+        # 8086 has an instance of what a tree should look like
+        # maybe 8087 since may be off by 1 and it starts with 0 when it should be 1?
+        if 7000 < trial < 9097:
+            print(f'==========={trial}===========')
+            for thing in layout:
+                print(''.join(thing))#
+
+
         # print(processed_robot_data)
         # print('===========')
 
         # get the quadrant values
 
+        
+        # PART 1 details
         midx = len(layout[0])//2
         midy = len(layout)//2
 
@@ -81,11 +104,20 @@ def main():
             elif midx < curx < len(layout[0]) and midy < cury < len(layout): # q4
                 q_count[3] += 1
 
-    # if python 3.8+ only
-    print(prod(q_count))
+        # if python 3.8+ only
+        safety_factor = prod(q_count)
+        min_q_count = min(min_q_count, safety_factor)
 
-    # python <3.8
-    print(reduce(mul, q_count, 1))
+        # if safety_factor <= 39098736:
+        #     print(f'==========={trial}===========')
+        #     for thing in layout:
+        #         print(''.join(thing))
+
+        # print(prod(q_count))
+
+        # python <3.8
+        # print(reduce(mul, q_count, 1))
+    print(min_q_count)
 
     # print(input_text)
 
