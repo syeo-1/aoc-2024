@@ -94,4 +94,18 @@ a deque is a double-ended queue. Use it for queueing operations
 
 use @cache from functools to greatly improve performance of recursive functions
 
+### problem 12
+
+did not attempt
+
+### problem 13
+
+no solution for part 1 or 2 :/
+
+did a bit of review for linear algebra concepts. Learned about diophanitine equations. Sometimes when solving systems of linear equations, you want to restrict solutions such that only integer solutions are allowed. Otherwise, normally libraries such as numpy will give solutions with floating point numbers. 
+
+Ones such library that offers integer solutions to solving linear equations is sympy: https://docs.sympy.org/latest/modules/solvers/diophantine.html
+
+unfortunately, wasn't able to get it to work...
+
 
