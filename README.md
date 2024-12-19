@@ -135,5 +135,27 @@ or if you do not, you can also get the same result using functools and operator 
 
 where 1 is the starting value and mul is the operation to do on your iterable
 
+### problem 15
+
+lot of help for this one. Unfortunately, couldn't do part 1 on my own
+
+if you want to flatten a 2d list, you can use the following method (chain) from itertools like so:
+
+    from itertools import chain
+    # check the second highest voted answer on how to flatten a 2d nested list using chain function and splat operator: https://stackoverflow.com/questions/952914/how-do-i-make-a-flat-list-out-of-a-list-of-lists
+    # a 2d list is being passed into the chain function call
+    instructions_processed = list(chain(*[list(s) for s in instructions]))
+
+Also, learned about how you can use index and strings to help make easier lookups for small maps, like for coordinates like so:
+
+    d = [
+        (-1, 0),
+        (1, 0), 
+        (0, -1),
+        (0, 1)
+    ]
+
+    # can use d[ds.index('^')] to lookup the proper direction point/tuple 
+    ds = "^v<>"
 
 
